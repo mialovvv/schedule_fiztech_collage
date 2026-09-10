@@ -16,7 +16,10 @@ from aiogram.utils.keyboard import InlineKeyboardBuilder
 
 logging.basicConfig(level=logging.INFO)
 
-BOT_TOKEN = "bot_token"
+from dotenv import load_dotenv
+
+load_dotenv()
+BOT_TOKEN = os.getenv("BOT_TOKEN", "YOUR_BOT_TOKEN_HERE")
 
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
